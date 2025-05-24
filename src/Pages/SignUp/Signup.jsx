@@ -72,7 +72,7 @@ const Signup = () => {
           {/* ShoW Passoword is Component */}
           <ShowPassword 
           value={signup.password}
-          onChange={(e)=>setSignup({...signup ,password:e.target.password})}
+          onChange={(e)=>setSignup({...signup ,password:e.target.value})}
           />
         </Form.Group>
 
