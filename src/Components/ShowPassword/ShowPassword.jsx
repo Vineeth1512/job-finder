@@ -6,14 +6,14 @@ const ShowPassword = ({
   value,
   onChange,
   placeholder = "Password",
-  controlId = "Password",
+  
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <>
       <div style={{ position: "relative" }}>
         <Form.Control
-          controlId={controlId}
+          
           value={value}
           type={showPassword ? "text" : "password"}
           placeholder={placeholder}

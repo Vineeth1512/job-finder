@@ -1,0 +1,14 @@
+.dashboard-container {
+  display: flex;
+  height: 85vh; /* Full viewport height */
+}
+
+.dashboard-container > * {
+  flex-shrink: 0;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 2rem;
+  text-align: center;
+}

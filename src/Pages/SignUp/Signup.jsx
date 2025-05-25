@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../Config/firebaseConfig";
 import "./Signup.css";
@@ -28,12 +28,17 @@ const Signup = () => {
         signup.email,
         signup.password
       );
-
-      await setDoc(doc(db, "users", createdAccount.user.uid), {
+      updateProfile(createdAccount.user,{
+        displayName:signup.name
+      })
+//createdAccount.user.uid
+      await setDoc(doc(db, `${signup.role}s`,signup.name ), {
         name: signup.name,
         email: signup.email,
         role: signup.role,
+        id: Date.now()
       });
+      
 
       
 
@@ -76,7 +81,9 @@ const Signup = () => {
           />
         </Form.Group>
 
-        <Form.Select
+      <Form.Group>
+        <Form.Label>Role</Form.Label>
+         <Form.Select
           aria-label="Default select example"
           onChange={(e) => setSignup({ ...signup, role: e.target.value })}
         >
@@ -84,6 +91,8 @@ const Signup = () => {
           <option value="recruiter">Recruiter</option>
           <option value="jobseeker">JobSeeker</option>
         </Form.Select>
+      </Form.Group>
+       
         <Button variant="primary" type="submit" className="w-100">
           Sign Up
         </Button>

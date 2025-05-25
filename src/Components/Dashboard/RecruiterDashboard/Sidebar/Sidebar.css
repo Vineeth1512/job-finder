@@ -1,0 +1,25 @@
+.sidebar {
+  width: 250px;
+  height: 85vh;
+  background-color: #aec9e4;
+  color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+} 
+
+.sidebar .btn {
+  background-color: #34495e;
+  margin: 10px 0;
+  border: none;
+  text-align: left;
+  padding: 1rem;
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .btn:hover {
+  background-color: #1abc9c;
+}
+
