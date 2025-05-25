@@ -11,6 +11,7 @@ const RecruiterDashboard = () => {
           <Sidebar />
         </div>
         <div className="dashboard-content">
+          <h1>Recruiter Dashboard</h1>
      
           <Outlet/>
         </div>
